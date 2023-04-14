@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { FormValue } from "../../interface/Interface";
 import {
   Box,
+  Button,
   Checkbox,
   Flex,
   Input,
@@ -16,6 +17,7 @@ import {
 } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { send_message } from "api/axios/phoneAuthentication";
 
 const SignUp = () => {
   const {
@@ -178,6 +180,9 @@ const SignUp = () => {
                   required: "필수 정보입니다.",
                 })}
               />
+              <Button onClick={() => send_message(getValues("phone_number"))}>
+                인증하기
+              </Button>
             </InputGroup>
             {errors?.email && <p>{errors.phone_number?.message}</p>}
           </div>

@@ -18,7 +18,7 @@ export const getFeeds = async (url: string) =>
   });
 
 export const login = async (data: any) =>
-  await instance.post(`${BASE_URL}/users/login/`, data).then((res) => {
+  await instance.post(`/users/login/`, data).then((res) => {
     console.log(res);
     return res.data;
   });
@@ -27,7 +27,7 @@ export const getLetterlists = (): Promise<Letterlists[]> => {
   return instance.get(`letterlists/`).then((res) => res.data);
 };
 export const getFeedDetail = async (feedID: number, group: string) =>
-  await instance.get(`${BASE_URL}/feeds/${group}/${feedID}/`).then((res) => {
+  await instance.get(`/feeds/${group}/${feedID}/`).then((res) => {
     return res.data;
   });
 

@@ -55,9 +55,9 @@ function Sidebar({ sidebar, setSidebar }: SidebarProps) {
       addCategory(newChannelName);
       setNewChannelName("");
       closeModal();
-      console.log(newChannelName);
     }
   };
+  console.log("asdf", newChannelName);
 
   // 카테고리 삭제
   const deleteCategoryMutation = useMutation(

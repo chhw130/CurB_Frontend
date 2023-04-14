@@ -22,11 +22,11 @@ export const useFeed = (): UseFeed => {
     isLoading,
   } = useInfiniteQuery(
     Querykey.feedData,
-    ({ pageParam = `${BASE_URL}/feeds/oz/` }) => getFeeds(pageParam),
+    ({ pageParam = `/feeds/oz/` }) => getFeeds(pageParam),
     {
       getNextPageParam: (lastpage) => {
         if (lastpage.total_pages - lastpage.now_page > 0)
-          return `${BASE_URL}/feeds/oz/?page=${lastpage.now_page + 1}`;
+          return `/feeds/oz/?page=${lastpage.now_page + 1}`;
         else {
           return undefined;
         }
